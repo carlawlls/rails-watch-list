@@ -4,6 +4,8 @@
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
   <div class="card-movie-infos">
     <div>
+      <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
+
       <% @list.bookmarks.each do |bookmark| %>
         <h2><%= bookmark.movie.title %></h2>
         <p><%= bookmark.movie.overview %></p>
