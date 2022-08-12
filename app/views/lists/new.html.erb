@@ -1,7 +1,10 @@
-<h1>Add a new list</h1>
+<div class="body">
 
-<%= simple_form_for(@list) do |f| %>
-<%= f.input :name %>
-<%= f.input :photo, as: :file %>
-<%= f.submit 'Create', class: "btn btn-primary"%>
-<% end %>
+  <h1>Add a new list</h1>
+
+  <%= simple_form_for(@list) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit 'Create', class: "btn btn-primary"%>
+  <% end %>
+</div>

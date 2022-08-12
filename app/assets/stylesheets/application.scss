@@ -10,3 +10,86 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.body {
+  background-color: black;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.body {
+  background-color: black;
+  color: white;
+}
+
+.btn {
+  background-color: darkred;
+  color: white;
+  padding: 8px 30px;
+  border-radius: 5px;
+  font-weight: lighter;
+  align-items: center;
+  text-decoration: none;
+
+  a {
+    color: white;
+    text-decoration: none;
+    align-items: center;
+  }
+}
+
+.list-header {
+  text-align: center;
+  font-weight: 200;
+  padding: 32px;
+
+  h2 {
+    color: white;
+    text-transform: uppercase;
+  }
+}
+
+.flexbox-container {
+  display: flex;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 10px;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
