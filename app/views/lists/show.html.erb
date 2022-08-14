@@ -1,35 +1,37 @@
-<div class="body">
+ <div class="container">
+  <div class="list-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_tag @list.photo.key %>)">
 
-  <h1><%= @list.name %></h1>
-
-  <div class="card-movie">
-    <div class="card-movie-infos">
-      <div>
-        <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
-
-        <% @list.bookmarks.each do |bookmark| %>
-          <h2><%= bookmark.movie.title %></h2>
-          <p><%= bookmark.movie.overview %></p>
-          <p><%= image_tag bookmark.movie.poster_url %></p>
-          <p><%= bookmark.movie.rating %></p>
-          <h6>Comment:</h6>
-          <p><%= bookmark.comment %></p>
-
-          <%= link_to "Delete",
-              bookmark_path(bookmark),
-              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-          %>
-
-        <% end %>
-      </div>
-
+    <div class="container">
+      <h1><%= @list.name %></h1>
     </div>
   </div>
 
-<div class="btn btn-flat">
-  <%= link_to 'Add a new bookmark', new_list_bookmark_path(@list) %>
-</div>
-<div class="btn btn-flat">
-  <%= link_to 'Home', lists_path  %>
-</div>
-</div>
+  <div class="cards">
+    <% @list.bookmarks.each do |bookmark| %>
+    <div class="card-movie">
+        <%= image_tag bookmark.movie.poster_url, class: "card-img" %>
+      <div class="card-movie-info">
+        <h2><%= bookmark.movie.title %></h2>
+        <p><%= bookmark.movie.overview %></p>
+        <p><%= bookmark.movie.rating %></p>
+        <h6>Comment:</h6>
+        <p><%= bookmark.comment %></p>
+      </div>
+
+      <div class="btn btn-flat">
+        <%= link_to "Delete",
+          bookmark_path(bookmark),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+        %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+  <div class="btn btn-flat">
+    <%= link_to 'Add a new bookmark', new_list_bookmark_path(@list) %>
+  </div>
+  <div class="btn btn-flat">
+    <%= link_to 'Home', lists_path  %>
+  </div>
+ </div>
